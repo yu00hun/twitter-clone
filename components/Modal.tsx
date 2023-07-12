@@ -5,7 +5,7 @@ import Button from './Button';
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onsSubmit: () => void;
+  onSubmit: () => void;
   title: string;
   body?: React.ReactElement;
   footer?: React.ReactElement;
@@ -16,7 +16,7 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({
   isOpen,
   onClose,
-  onsSubmit,
+  onSubmit,
   title,
   body,
   footer,
@@ -36,8 +36,8 @@ const Modal: React.FC<ModalProps> = ({
       return;
     }
 
-    onsSubmit();
-  }, [disabled, onsSubmit]);
+    onSubmit();
+  }, [disabled, onSubmit]);
 
   if (!isOpen) {
     return null;
