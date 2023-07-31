@@ -20,7 +20,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
   const { isFollowing, toggleFollow } = useFollow(userId);
 
   const createdAt = useMemo(() => {
-    if (!fetchedUser) {
+    if (!fetchedUser.createdAt) {
       return null;
     }
 
