@@ -6,6 +6,7 @@ import type { AppProps } from 'next/app';
 import { Toaster } from 'react-hot-toast';
 import { SessionProvider } from 'next-auth/react';
 import EditModal from '@/components/modals/EditModal';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <LoginModal />
       <Layout>
         <Component {...pageProps} />
+        <Analytics />
       </Layout>
     </SessionProvider>
   );
